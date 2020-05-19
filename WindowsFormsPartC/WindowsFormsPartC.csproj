@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4A84E9FF-57F3-4FA2-86C4-5D9335BF9D29}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>DerekWindowsFormsPartC</RootNamespace>
-    <AssemblyName>DerekWindowsFormsPartC</AssemblyName>
+    <RootNamespace>WindowsFormsPartC</RootNamespace>
+    <AssemblyName>WindowsFormsPartC</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

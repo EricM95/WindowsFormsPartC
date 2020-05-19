@@ -134,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::DerekWindowsFormsPartC.Properties.Resources.City1;
+            this.BackgroundImage = global::WindowsFormsPartC.Properties.Resources.City1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(836, 546);
             this.Controls.Add(this.label1);

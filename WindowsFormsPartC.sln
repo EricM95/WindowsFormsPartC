@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsPartC", "DerekWindowsFormsPartC\WindowsFormsPartC.csproj", "{4A84E9FF-57F3-4FA2-86C4-5D9335BF9D29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsPartC", "WindowsFormsPartC\WindowsFormsPartC.csproj", "{4A84E9FF-57F3-4FA2-86C4-5D9335BF9D29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
