@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bouncing_ball.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bouncing_ball.Designer.cs">
+      <DependentUpon>Bouncing_ball.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="Unit7\SketchForm.Designer.cs">
       <DependentUpon>SketchForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bouncing_ball.resx">
+      <DependentUpon>Bouncing_ball.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>

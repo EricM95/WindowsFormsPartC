@@ -61,8 +61,6 @@ namespace WindowsFormsPartC.Unit5
         /// Change the image in the picture box to the next image
         /// in the array with every animation timer click.  
         /// Cycle continuously.
-        /// 
-        /// FIND THE DELIBERATE ERROR!!!
         /// </summary>
         private void UpdateImage(object sender, EventArgs e)
         {
@@ -85,12 +83,24 @@ namespace WindowsFormsPartC.Unit5
         private void StartAnimation(object sender, EventArgs e)
         {
             animationTimer.Start();
+            timerDateTime.Start();
         }
 
         private void StopAnimation(object sender, EventArgs e)
         {
             animationTimer.Stop();
+            timerDateTime.Stop();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timerDateTime_Tick(object sender, EventArgs e)
+        {
+            labelDate.Text = DateTime.Now.ToLongDateString();
+            labelTime.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }

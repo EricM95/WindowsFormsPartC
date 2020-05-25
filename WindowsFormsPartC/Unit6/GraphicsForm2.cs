@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,7 +11,7 @@ namespace WindowsFormsPartC.Unit6
     {
         public const int BYTE = 256;
 
-        private int x; 
+        private int x;
         private int y;
         private int w; // width
         private int h; // height
@@ -39,7 +36,7 @@ namespace WindowsFormsPartC.Unit6
 
             Point p = new Point(x, y);
             return p;
-        
+
         }
 
         private Color getRandomColor()
@@ -53,13 +50,14 @@ namespace WindowsFormsPartC.Unit6
             return Color.FromArgb(r, g, b);
         }
 
+
         private void DrawScreen(object sender, PaintEventArgs e)
         {
-            //drawStrings(e.Graphics);
-            //drawRectangles(e.Graphics, 600, 50);
-            //drawHexagon(e.Graphics, 20, 300);
+            drawStrings(e.Graphics);
+            drawRectangles(e.Graphics, 600, 50);
+            drawHexagon(e.Graphics, 20, 300);
 
-            if(keyPressed)
+            if (keyPressed)
             {
                 Point p1 = getRandomPoint();
                 Point p2 = getRandomPoint();
@@ -74,7 +72,7 @@ namespace WindowsFormsPartC.Unit6
                     Rectangle rectangle = new Rectangle(p1.X, p1.Y, 200, 100);
                     e.Graphics.DrawRectangle(myPen, rectangle);
                 }
-                if(key == 'x')
+                if (key == 'x')
                 {
                     drawCircles(e.Graphics);
                 }
@@ -136,6 +134,8 @@ namespace WindowsFormsPartC.Unit6
 
         /// <summary>
         /// Task 6.2
+        /// This method will draw rectangles 
+        /// within another rectangle
         /// </summary>
         private void drawRectangles(Graphics g, int x, int y)
         {
@@ -158,6 +158,9 @@ namespace WindowsFormsPartC.Unit6
                 w = w - 2 * size;
                 h = h - 2 * size;
             }
+
+            Font myFont = new Font("Helvetica", 30);
+            g.DrawString("Eric's Rectangles", myFont, Brushes.Red, x, y + 5 * size);
         }
 
 

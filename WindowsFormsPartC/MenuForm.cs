@@ -29,8 +29,14 @@ namespace WindowsFormsPartC
             }
             else if (graphicsRadioButton.Checked)
             {
-                // Tasks 6.1 to 6.6
+                // Tasks 6.1 to 6.5
                 GraphicsForm2 form = new GraphicsForm2();
+                form.Show();
+            }
+            else if (ballRadioButton.Checked)
+            {
+                // Task 6.6
+                Bouncing_ball form = new Bouncing_ball();
                 form.Show();
             }
         }
@@ -41,6 +47,11 @@ namespace WindowsFormsPartC
         }
 
         private void graphicsRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
         }

@@ -20,10 +20,13 @@ namespace WindowsFormsPartC.Unit5
 
         public const string BACKGROUND_IMAGE_1 = "../../Images/Town and Sky/City1.wmf";
         public const string BACKGROUND_IMAGE_2 = "../../Images/Town and Sky/City2.wmf";
+        public const string BACKGROUND_IMAGE_3 = "../../Images/Town and Sky/City3.wmf";
 
         private string background = BACKGROUND_IMAGE_2;
+        private string background1 = BACKGROUND_IMAGE_3;
 
         private int horizontalSpeed = 10;
+        string baseFileName;
 
         private Animation animation = new Animation(4);
 
@@ -49,11 +52,13 @@ namespace WindowsFormsPartC.Unit5
             }
         }
 
-        private void updateCopter(object sender, EventArgs e)
+        private void updateImage(object sender, EventArgs e)
         {
             copterPictureBox.Image = animation.GetNextImage();
+            //pigPictureBox.Image = animation.GetNextImage();
 
             copterPictureBox.Left += horizontalSpeed;
+            //pigPictureBox.Left += horizontalSpeed;
 
             // If the copter goes off the right hand side
 
@@ -83,11 +88,14 @@ namespace WindowsFormsPartC.Unit5
             }
         }
 
-            private void loadImages(object sender, EventArgs e)
-            {
-                string baseFileName = "../../Images/Copter/copter";
-                animation.LoadImages(baseFileName);
-            }
+        private void loadImages(object sender, EventArgs e)
+        {
+            baseFileName = "../../Images/Copter/copter";
+            animation.LoadImages(baseFileName);
+
+            //baseFileName = "../../Images/Pigs/pig";
+            //animation.LoadImages(baseFileName);
+        }
 
         private void changeSpeed(object sender, EventArgs e)
         {
@@ -105,5 +113,5 @@ namespace WindowsFormsPartC.Unit5
             }
         }
     }
-    }
+}
 

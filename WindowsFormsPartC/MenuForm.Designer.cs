@@ -35,6 +35,7 @@
             this.flyMeRadioButton = new System.Windows.Forms.RadioButton();
             this.quitButton = new System.Windows.Forms.Button();
             this.graphicsRadioButton = new System.Windows.Forms.RadioButton();
+            this.ballRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             this.animationRadioButton.AutoSize = true;
             this.animationRadioButton.Location = new System.Drawing.Point(48, 51);
             this.animationRadioButton.Name = "animationRadioButton";
-            this.animationRadioButton.Size = new System.Drawing.Size(408, 30);
+            this.animationRadioButton.Size = new System.Drawing.Size(507, 35);
             this.animationRadioButton.TabIndex = 2;
             this.animationRadioButton.Text = "Task 5.1 Butterfly and Horse Animation";
             this.animationRadioButton.UseVisualStyleBackColor = true;
@@ -73,7 +74,7 @@
             this.flyMeRadioButton.AutoSize = true;
             this.flyMeRadioButton.Location = new System.Drawing.Point(48, 105);
             this.flyMeRadioButton.Name = "flyMeRadioButton";
-            this.flyMeRadioButton.Size = new System.Drawing.Size(337, 30);
+            this.flyMeRadioButton.Size = new System.Drawing.Size(416, 35);
             this.flyMeRadioButton.TabIndex = 3;
             this.flyMeRadioButton.Text = "Task 5.3 Fly With Me Animation";
             this.flyMeRadioButton.UseVisualStyleBackColor = true;
@@ -94,18 +95,31 @@
             this.graphicsRadioButton.Checked = true;
             this.graphicsRadioButton.Location = new System.Drawing.Point(48, 155);
             this.graphicsRadioButton.Name = "graphicsRadioButton";
-            this.graphicsRadioButton.Size = new System.Drawing.Size(180, 30);
+            this.graphicsRadioButton.Size = new System.Drawing.Size(222, 35);
             this.graphicsRadioButton.TabIndex = 5;
             this.graphicsRadioButton.TabStop = true;
             this.graphicsRadioButton.Text = "Unit 6 Graphics";
             this.graphicsRadioButton.UseVisualStyleBackColor = true;
             this.graphicsRadioButton.CheckedChanged += new System.EventHandler(this.graphicsRadioButton_CheckedChanged);
             // 
+            // ballRadioButton
+            // 
+            this.ballRadioButton.AutoSize = true;
+            this.ballRadioButton.Location = new System.Drawing.Point(48, 206);
+            this.ballRadioButton.Name = "ballRadioButton";
+            this.ballRadioButton.Size = new System.Drawing.Size(140, 35);
+            this.ballRadioButton.TabIndex = 6;
+            this.ballRadioButton.TabStop = true;
+            this.ballRadioButton.Text = "Task 6.6";
+            this.ballRadioButton.UseVisualStyleBackColor = true;
+            this.ballRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // MenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1046, 679);
+            this.Controls.Add(this.ballRadioButton);
             this.Controls.Add(this.graphicsRadioButton);
             this.Controls.Add(this.quitButton);
             this.Controls.Add(this.flyMeRadioButton);
@@ -130,5 +144,6 @@
         private System.Windows.Forms.RadioButton flyMeRadioButton;
         private System.Windows.Forms.Button quitButton;
         private System.Windows.Forms.RadioButton graphicsRadioButton;
+        private System.Windows.Forms.RadioButton ballRadioButton;
     }
 }

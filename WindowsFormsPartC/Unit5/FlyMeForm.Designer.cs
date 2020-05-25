@@ -37,9 +37,11 @@
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.speedNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.pigPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.copterPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speedNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pigPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,6 +78,7 @@
             // 
             // copterPictureBox
             // 
+            this.copterPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.copterPictureBox.Location = new System.Drawing.Point(192, 59);
             this.copterPictureBox.Name = "copterPictureBox";
             this.copterPictureBox.Size = new System.Drawing.Size(100, 105);
@@ -95,7 +98,7 @@
             // animationTimer
             // 
             this.animationTimer.Enabled = true;
-            this.animationTimer.Tick += new System.EventHandler(this.updateCopter);
+            this.animationTimer.Tick += new System.EventHandler(this.updateImage);
             // 
             // speedNumericUpDown
             // 
@@ -130,6 +133,15 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Speed";
             // 
+            // pigPictureBox
+            // 
+            this.pigPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.pigPictureBox.Location = new System.Drawing.Point(48, 59);
+            this.pigPictureBox.Name = "pigPictureBox";
+            this.pigPictureBox.Size = new System.Drawing.Size(104, 98);
+            this.pigPictureBox.TabIndex = 5;
+            this.pigPictureBox.TabStop = false;
+            // 
             // FlyMeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -137,6 +149,7 @@
             this.BackgroundImage = global::WindowsFormsPartC.Properties.Resources.City1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(836, 546);
+            this.Controls.Add(this.pigPictureBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.speedNumericUpDown);
             this.Controls.Add(this.quitButton);
@@ -152,6 +165,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.copterPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speedNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pigPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +181,6 @@
         private System.Windows.Forms.Timer animationTimer;
         private System.Windows.Forms.NumericUpDown speedNumericUpDown;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pigPictureBox;
     }
 }
