@@ -51,6 +51,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "SketchForm";
             this.Text = "Sketch Form";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SketchForm_Load);
             this.ResumeLayout(false);
 

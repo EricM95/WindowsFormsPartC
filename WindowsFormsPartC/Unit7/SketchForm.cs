@@ -4,6 +4,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsPartC.Unit7
 {
+    /// <summary>
+    /// This form will draw the screen
+    /// when keys are pressed
+    /// 
+    /// Modified by: Eric Man
+    /// </summary>
     public partial class SketchForm : Form
     {
         private Bitmap canvas;
@@ -15,6 +21,7 @@ namespace WindowsFormsPartC.Unit7
 
         private bool keyPressed = false;
         private string keyName;
+        DialogResult response;
 
         public SketchForm()
         {
@@ -29,6 +36,12 @@ namespace WindowsFormsPartC.Unit7
             sketchPanel.BackgroundImage = canvas;
         }
 
+        /// <summary>
+        /// This method will draw the screen
+        /// when the user presses up, down, 
+        /// left and right keys. 
+        /// </summary>
+        /// <param name="g"></param>
         private void drawPoint(Graphics g)
         {
             if (keyName == "Right")
@@ -46,6 +59,20 @@ namespace WindowsFormsPartC.Unit7
             else if (keyName == "Down")
             {
                 y = y + penSize / 2;
+            }
+            else if (keyName == "Escape")
+            {
+                response = MessageBox.Show("Are you sure you want to quit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (response == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+            else if (keyName == "C")
+            {
+                SketchForm sketchForm = new SketchForm();
+                sketchForm.Show();
+                this.Dispose(false);
             }
 
             if (keyPressed)
