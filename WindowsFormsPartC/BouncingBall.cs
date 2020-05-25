@@ -14,29 +14,33 @@ namespace WindowsFormsPartC
    
     public partial class Bouncing_ball : Form
     {
-        private int x = 200, y = 50;
         private int size = 30;
-        private int xmove = 10, ymove = 10;
 
         public const int BYTE = 256;
 
         private Random generator = new Random();
 
-        private Ball redBall = new Ball();
+        private Ball redBall;
+
+        private Ball greenBall;
 
         private Point getRandomPoint()
         {
             int x = generator.Next(ballPictureBox.Width);
             int y = generator.Next(ballPictureBox.Height);
 
-            Point randomRedPoint = new Point();
+            Point randomRedPoint = new Point(x, y);
             return randomRedPoint;
         }
         private void ballPicturePoint_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
 
-            g.FillEllipse(Brushes.Red, x, y, size, size);
+            SolidBrush brush = new SolidBrush(Color.Red);
+            redBall.Draw(e.Graphics, brush);
+
+            brush = new SolidBrush(Color.Green);
+            greenBall.Draw(e.Graphics, brush);
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -51,25 +55,9 @@ namespace WindowsFormsPartC
 
         private void moveBall(object sender, EventArgs e)
         {
-            // add 10 to x and y positions
-            x += xmove;
-            if (x < 0)
-            {
-                xmove = -xmove;
-            }
-            else if (x + 30 > ClientSize.Width)
-            {
-                xmove = -xmove;
-            }
-            y += ymove;
-            if (y < 0)
-            {
-                ymove = -ymove;
-            }
-            else if (y + 30 > ClientSize.Height)
-            {
-                ymove = -ymove;
-            }
+            redBall.Move();
+            greenBall.Move();
+
             Refresh();
         }
 
@@ -85,26 +73,27 @@ namespace WindowsFormsPartC
 
         private void Bouncing_ball_Load(object sender, EventArgs e)
         {
+            Rectangle boundary = new Rectangle(0, 0, ballPictureBox.Width, ballPictureBox.Height);
+            redBall = new Ball(boundary);
+            greenBall = new Ball(boundary);
+
             redBall.Position = getRandomPoint();
+            greenBall.Position = getRandomPoint();
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            string input;
-
-            input = keyData.ToString();
-
-            if (input == "Up")
+            if (keyData == Keys.Up )
             {
-                size = size + 10;
+                size += 10;
                 return true;
             }
-            if (input == "Down")
+            if (keyData == Keys.Down)
             {
-                size = size - 10;
+                size =- 10;
                 return true;
             }
-            if (input == "C")
+            if (keyData == Keys.C)
             {
                 ballPictureBox.BackColor = getRandomColor();
                 return true;
@@ -130,17 +119,43 @@ namespace WindowsFormsPartC
         public int Size { get; set; }
         public Point Position { get; set; }
         public Point Speed { get; set; }
+        public Rectangle Boundary { get; set; }
 
-        public Ball()
+        public Ball(Rectangle boundary)
         {
+            Boundary = boundary;
+
             Size = 30;
             Position = new Point(200, 50);
             Speed = new Point(10, 10);
         }
 
-        public void Draw(Graphics g)
+        public void Draw(Graphics g, SolidBrush brush)
         {
-            g.FillEllipse(Brushes.Red, Position.X, Position.Y, Size, Size);
+            g.FillEllipse(brush, Position.X, Position.Y, Size, Size);
+        }
+
+        public void Move()
+        {
+            Point p = new Point(Position.X + Speed.X, Position.Y + Speed.Y);
+            Position = p;
+
+            if (p.X + Size >= Boundary.Width)
+            {
+                Speed = new Point(-Speed.X, Speed.Y);
+            }
+            else if (p.Y + Size >= Boundary.Height)
+            {
+                Speed = new Point(Speed.X, -Speed.Y);
+            }
+            else if (p.X + Size <= Boundary.X) 
+            {
+                Speed = new Point(-Speed.X, Speed.Y);
+            }
+            else if (p.Y + Size <= Boundary.Y)
+            {
+                Speed = new Point(Speed.X, -Speed.Y);
+            }
         }
     }
 }

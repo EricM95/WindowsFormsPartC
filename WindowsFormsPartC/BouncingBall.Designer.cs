@@ -39,9 +39,10 @@
             // 
             // ballPictureBox
             // 
-            this.ballPictureBox.Location = new System.Drawing.Point(174, 209);
+            this.ballPictureBox.BackColor = System.Drawing.Color.Moccasin;
+            this.ballPictureBox.Location = new System.Drawing.Point(31, 40);
             this.ballPictureBox.Name = "ballPictureBox";
-            this.ballPictureBox.Size = new System.Drawing.Size(53, 50);
+            this.ballPictureBox.Size = new System.Drawing.Size(741, 309);
             this.ballPictureBox.TabIndex = 0;
             this.ballPictureBox.TabStop = false;
             this.ballPictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.ballPicturePoint_Paint);
@@ -87,13 +88,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Orange;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.quitButton);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.ballPictureBox);
             this.Name = "Bouncing_ball";
-            this.Text = "Bouncing_ball";
+            this.Text = "Eric\'s Bouncing Ball";
             this.Load += new System.EventHandler(this.Bouncing_ball_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ballPictureBox)).EndInit();
             this.ResumeLayout(false);
