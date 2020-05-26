@@ -85,12 +85,12 @@ namespace WindowsFormsPartC
         {
             if (keyData == Keys.Up )
             {
-                size += 10;
+                redBall.Size = size + 10;
                 return true;
             }
             if (keyData == Keys.Down)
             {
-                size =- 10;
+                redBall.Size = size - 10;
                 return true;
             }
             if (keyData == Keys.C)
@@ -98,6 +98,8 @@ namespace WindowsFormsPartC
                 ballPictureBox.BackColor = getRandomColor();
                 return true;
             }
+
+
             // return true if key processed, otherwise false
             return false;
         }

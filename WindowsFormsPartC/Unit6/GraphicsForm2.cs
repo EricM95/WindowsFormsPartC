@@ -50,12 +50,17 @@ namespace WindowsFormsPartC.Unit6
             return Color.FromArgb(r, g, b);
         }
 
-
+        /// <summary>
+        /// This method will draw the all
+        /// the graphics on the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DrawScreen(object sender, PaintEventArgs e)
         {
-            drawStrings(e.Graphics);
-            drawRectangles(e.Graphics, 600, 50);
-            drawHexagon(e.Graphics, 20, 300);
+            //drawStrings(e.Graphics);
+            //drawRectangles(e.Graphics, 600, 50);
+            //drawHexagon(e.Graphics, 20, 300);
 
             if (keyPressed)
             {
@@ -79,10 +84,15 @@ namespace WindowsFormsPartC.Unit6
 
                 keyPressed = false;
             }
+
+            
+            
         }
 
         /// <summary>
-        /// Task 6.5
+        /// Task 6.5 
+        /// This method will draw
+        /// concentric cirles
         /// </summary>
         private void drawCircles(Graphics g)
         {
@@ -107,6 +117,7 @@ namespace WindowsFormsPartC.Unit6
 
             }
         }
+
 
         /// <summary>
         /// Task 6.3

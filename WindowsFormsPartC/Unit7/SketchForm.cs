@@ -12,6 +12,7 @@ namespace WindowsFormsPartC.Unit7
     /// </summary>
     public partial class SketchForm : Form
     {
+        public const int BYTE = 256;
         private Bitmap canvas;
 
         private int x = 300;
@@ -22,6 +23,8 @@ namespace WindowsFormsPartC.Unit7
         private bool keyPressed = false;
         private string keyName;
         DialogResult response;
+
+        private Random generator = new Random();
 
         public SketchForm()
         {
@@ -38,12 +41,14 @@ namespace WindowsFormsPartC.Unit7
 
         /// <summary>
         /// This method will draw the screen
-        /// when the user presses up, down, 
-        /// left and right keys. 
+        /// when the user presses keys. 
         /// </summary>
         /// <param name="g"></param>
         private void drawPoint(Graphics g)
         {
+            Brush myBrush = new SolidBrush(getRandomColor());
+            Rectangle rectangle = new Rectangle(x, y, penSize, penSize);
+
             if (keyName == "Right")
             {
                 x = x + penSize / 2;
@@ -59,6 +64,38 @@ namespace WindowsFormsPartC.Unit7
             else if (keyName == "Down")
             {
                 y = y + penSize / 2;
+            }
+            else if (keyName == "Up" && keyName == "Left")
+            {
+                x = x + penSize / 2;
+                y = y + penSize / 2;
+            }
+            else if (keyName == "Up" && keyName == "Right")
+            {
+                y = y - penSize / 2;
+                x = x + penSize / 2;
+            }
+            else if (keyName == "Down" && keyName == "Right")
+            {
+                y = y - penSize / 2;
+                x = x - penSize / 2;
+            }
+            else if (keyName == "Down" && keyName == "Left")
+            {
+                y = y + penSize / 2;
+                x = x - penSize / 2;
+            }
+            else if (keyName == "B")
+            {
+                penSize = penSize + 1;
+            }
+            else if (keyName == "S")
+            {
+                penSize = penSize - 1;
+            }
+            else if (keyName == "F1")
+            {
+                g.FillEllipse(myBrush, rectangle);
             }
             else if (keyName == "Escape")
             {
@@ -76,7 +113,8 @@ namespace WindowsFormsPartC.Unit7
             }
 
             if (keyPressed)
-                g.FillEllipse(Brushes.Red, x, y, penSize, penSize);
+               // g.FillEllipse(Brushes.Red, rectangle);
+            g.FillEllipse(myBrush, rectangle);
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -93,6 +131,15 @@ namespace WindowsFormsPartC.Unit7
             Graphics g = Graphics.FromImage(sketchPanel.BackgroundImage);
             drawPoint(g);
         }
+        private Color getRandomColor()
+        {
+            int r, g, b;
 
+            r = generator.Next(BYTE);
+            g = generator.Next(BYTE);
+            b = generator.Next(BYTE);
+
+            return Color.FromArgb(r, g, b);
+        }
     }
 }
