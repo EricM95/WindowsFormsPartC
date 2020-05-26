@@ -97,6 +97,10 @@ namespace WindowsFormsPartC.Unit7
             {
                 g.FillEllipse(myBrush, rectangle);
             }
+            else if (keyName == "F2")
+            {
+                this.BackColor = getRandomColor();
+            }
             else if (keyName == "Escape")
             {
                 response = MessageBox.Show("Are you sure you want to quit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
