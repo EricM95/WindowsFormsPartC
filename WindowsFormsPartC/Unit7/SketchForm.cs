@@ -41,7 +41,7 @@ namespace WindowsFormsPartC.Unit7
 
         /// <summary>
         /// This method will draw the screen
-        /// when the user presses keys. 
+        /// when the user presses keys.
         /// </summary>
         /// <param name="g"></param>
         private void drawPoint(Graphics g)
@@ -144,6 +144,11 @@ namespace WindowsFormsPartC.Unit7
             b = generator.Next(BYTE);
 
             return Color.FromArgb(r, g, b);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
