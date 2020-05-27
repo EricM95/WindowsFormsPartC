@@ -117,8 +117,8 @@ namespace WindowsFormsPartC.Unit7
             }
 
             if (keyPressed)
-               // g.FillEllipse(Brushes.Red, rectangle);
-            g.FillEllipse(myBrush, rectangle);
+                // g.FillEllipse(Brushes.Red, rectangle);
+                g.FillEllipse(myBrush, rectangle);
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

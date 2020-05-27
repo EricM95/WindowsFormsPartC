@@ -40,6 +40,7 @@
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.timerDateTime = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.animationPictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -141,11 +142,21 @@
             // 
             this.timerDateTime.Tick += new System.EventHandler(this.timerDateTime_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(840, 395);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 31);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Eric Man";
+            // 
             // AnimationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 599);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.quitButton);
@@ -179,6 +190,7 @@
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Timer timerDateTime;
+        private System.Windows.Forms.Label label1;
     }
 }
 
